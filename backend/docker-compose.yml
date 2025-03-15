@@ -1,0 +1,38 @@
+version: "3"
+
+services:
+  api-gateway:
+      build: ./api-gateway
+      ports:
+        - "80:80"
+      depends_on:
+        - auth
+        - consultas
+        - graficos
+        - almacenamiento
+        
+  auth:
+    build: ./auth
+    ports:
+      - "8001:8001"
+
+  consultas:
+    build: ./consultas
+    ports:
+      - "8002:8002"
+    depends_on:
+      - auth
+
+  graficos:
+    build: ./graficos
+    ports:
+      - "8003:8003"
+    depends_on:
+      - consultas
+
+  almacenamiento:
+    build: ./almacenamiento
+    ports:
+      - "8004:8004"
+    depends_on:
+      - graficos
