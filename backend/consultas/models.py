@@ -1,11 +1,15 @@
 from pydantic import BaseModel
 from typing import Dict
 
-class ConsultaRequest(BaseModel):
-    idconversacion: str
+class ConsultaInput(BaseModel):
+    idconsulta: str 
     correo: str
-    fecha: str
+    idconversacion: str
     prompt: str
+    fecha: str
+
+class ConsultaOutput(BaseModel):
+    input: ConsultaInput.dict
     data: Dict = {
         "respuesta" : str,
         "input_tokens": int,
