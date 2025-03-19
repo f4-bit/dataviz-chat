@@ -18,6 +18,10 @@ def recibir_consulta(consulta: ConsultaInput):
     (str) prompt: el del usuario
     (str) fecha: la pasa el sistema
     '''
+    
+    '''
+    Se retorna un ConsultaOutput
+    '''
     respuesta = procesar_consulta(consulta)
     
     #Retorna un json de tipo ConsultaOutput
@@ -29,3 +33,7 @@ def crear_conversacion():
     Sucede cuando se crea una nueva conversación
     """
     return id_conversacion()
+
+'''
+Optimizar los Docker, unir los ya existentes.
+'''
