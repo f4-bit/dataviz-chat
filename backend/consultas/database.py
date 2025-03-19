@@ -24,10 +24,6 @@ def idExiste(id, tipo: str):
     '''
     pass
 
-'''
-IMPLEMENTAR FUNCIONALIDAD:
-Falta conectar con la base de datos en AWS
-'''
 
 import boto3
 
