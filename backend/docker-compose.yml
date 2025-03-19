@@ -14,6 +14,8 @@ services:
       - .:/app
     environment:
       - ENV=production
+    env_file:
+      - .env
 
   dynamodb:
     image: amazon/dynamodb-local

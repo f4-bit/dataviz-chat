@@ -1,6 +1,9 @@
 import boto3
 import os
 from models import ConsultaInput
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # Conectar con DynamoDB
 dynamodb = boto3.resource('dynamodb', region_name="us-east-2")
